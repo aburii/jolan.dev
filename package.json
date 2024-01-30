@@ -1,5 +1,5 @@
 {
-  "name": "fastbun-starter",
+  "name": "jolan-dev",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -8,8 +8,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@fastbun-starter/eslint-config": "*",
-    "@fastbun-starter/typescript-config": "*",
+    "@jolan-dev/eslint-config": "*",
+    "@jolan-dev/typescript-config": "*",
     "prettier": "^3.1.1",
     "turbo": "latest"
   },
