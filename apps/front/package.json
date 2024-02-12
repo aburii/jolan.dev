@@ -1,5 +1,7 @@
 {
-  "name": "@jolan-dev/front",
+  "name": "front",
+
+
   "private": true,
   "type": "module",
   "scripts": {
