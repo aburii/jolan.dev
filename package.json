@@ -23,6 +23,7 @@
   ],
   "packageManager": "bun@1.0.21",
   "dependencies": {
-    "@nuxt/ui": "^2.13.0"
+    "@nuxt/ui": "^2.13.0",
+    "sass": "^1.70.0"
   }
 }
