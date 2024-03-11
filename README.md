@@ -1,5 +1,9 @@
-# FastBunStarter
+# jolan.dev is currently wip
 
-###### Using [FastBun](https://github.com/aburii/FastBun)
+### `What's planned?`
 
-This is a template repository that gathers my personal stack Nuxt & ElysiaJS / NestJS !
+- Actually: Working on Figma and further concepts to come (basically finding ideas).
+
+![img.png](resources/img.png)
+_This should be coming soon..._
+

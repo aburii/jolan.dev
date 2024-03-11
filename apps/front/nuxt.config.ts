@@ -4,16 +4,32 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Jolan - Web Developer',
+      title: "Jolan - Web Developer",
     },
   },
 
-  modules: ['@nuxt/ui'],
+  modules: [
+    "@nuxt/ui",
+    "@vueuse/nuxt",
+    [
+      "@nuxtjs/google-fonts",
+      {
+        families: {
+          Roboto: true,
+          Raleway: true,
+        },
+      },
+    ],
+  ],
 
-  css: ['~/assets/scss/main.scss'],
+  colorMode: {
+    preference: "dark",
+  },
+
+  css: ["~/assets/main.css"],
 
   typescript: {
     strict: true,
     shim: false,
   },
-})
+});
