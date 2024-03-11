@@ -8,7 +8,23 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/ui"],
+  modules: [
+    "@nuxt/ui",
+    "@vueuse/nuxt",
+    [
+      "@nuxtjs/google-fonts",
+      {
+        families: {
+          Roboto: true,
+          Raleway: true,
+        },
+      },
+    ],
+  ],
+
+  colorMode: {
+    preference: "dark",
+  },
 
   css: ["~/assets/main.css"],
 
