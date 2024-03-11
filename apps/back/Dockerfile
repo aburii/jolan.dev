@@ -21,14 +21,15 @@ COPY . .
 
 # [optional] tests & build
 ENV NODE_ENV=production
-RUN bun run build -- --filter=@jolan-dev/front
+RUN bun run build -- --filter=@jolan-dev/back
 
 # copy production dependencies and source code into final image
 FROM base AS release
 COPY --from=install /temp/prod/node_modules node_modules
-COPY --from=prerelease /usr/src/app/apps/front/.output ./.output
-COPY --from=prerelease /usr/src/app/apps/front/package.json .
+COPY --from=prerelease /usr/src/app/apps/back/src ./src
+COPY --from=prerelease /usr/src/app/apps/back/tsconfig.json ./tsconfig.json
+COPY --from=prerelease /usr/src/app/apps/back/package.json .
 
 # run the app
 USER bun
-CMD [ "bun", "run", ".output/server/index.mjs" ]
+CMD [ "bun", "src/index.ts" ]
