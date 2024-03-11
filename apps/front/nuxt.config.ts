@@ -4,16 +4,16 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Jolan - Web Developer',
+      title: "Jolan - Web Developer",
     },
   },
 
-  modules: ['@nuxt/ui'],
+  modules: ["@nuxt/ui"],
 
-  css: ['~/assets/scss/main.scss'],
+  css: ["~/assets/main.css"],
 
   typescript: {
     strict: true,
     shim: false,
   },
-})
+});

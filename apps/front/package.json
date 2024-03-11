@@ -1,7 +1,5 @@
 {
   "name": "front",
-
-
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,11 +8,17 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "nuxt": "^3.9.0",
     "vue": "^3.4.6",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "eslint-config-custom": "*",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.14.2"
   }
 }
