@@ -9,10 +9,10 @@ export default {
     "./app.vue",
   ],
   theme: {
-    screens: {
-      "2xl": "1480px",
-    },
     extend: {
+      screens: {
+        "2xl": "1480px",
+      },
       colors: {
         "cod-gray": {
           "50": "#f6f6f6",
