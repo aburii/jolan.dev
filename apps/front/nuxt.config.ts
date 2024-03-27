@@ -8,19 +8,13 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    "@nuxt/ui",
-    "@vueuse/nuxt",
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          Roboto: true,
-          Raleway: true,
-        },
-      },
-    ],
-  ],
+  modules: ["@nuxt/ui", "@vueuse/nuxt", "@nuxt/fonts"],
+
+  fonts: {
+    experimental: {
+      processCSSVariables: true,
+    },
+  },
 
   colorMode: {
     preference: "dark",
