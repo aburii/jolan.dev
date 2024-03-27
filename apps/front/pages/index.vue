@@ -14,7 +14,7 @@
         <span>Available</span>
       </div>
     </div>
-    <div class="bg-blue-500 w-full">
+    <div class="w-full">
       <p>
         Labore qui esse culpa dolore in veniam duis enim do duis sunt
         exercitation amet. Consectetur minim ea nulla irure. Deserunt ullamco
