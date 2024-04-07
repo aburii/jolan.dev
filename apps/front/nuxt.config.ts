@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/ui", "@vueuse/nuxt", "@nuxt/fonts"],
+  modules: ["@nuxt/ui", "@vueuse/nuxt", "@nuxt/fonts", "@nuxt/image"],
 
   fonts: {
     experimental: {

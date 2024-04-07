@@ -14,7 +14,7 @@
       <li class="w-1/3 text-center">
         <UButton
           variant="link"
-          to="/"
+          to="/blog"
           label="Blog"
           class="header-link text-lg sm:text-2xl"
         />
@@ -22,7 +22,7 @@
       <li class="w-1/3 text-end">
         <UButton
           variant="link"
-          to="/"
+          to="/contact"
           label="Contact"
           class="header-link text-lg sm:text-2xl"
         />

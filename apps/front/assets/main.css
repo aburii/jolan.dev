@@ -11,4 +11,5 @@ html, body, #__nuxt {
 :root {
   --font-family: "Urbanist", system-ui, sans-serif;
   --font-brand: "Manrope", system-ui, sans-serif;
+  --header-size: 80px;
 }

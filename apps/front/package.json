@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -12,14 +12,15 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "nuxt": "^3.9.0",
-    "vue": "^3.4.6",
-    "vue-router": "^4.2.5",
-    "eslint-config-custom": "*",
+    "@nuxt/fonts": "latest",
+    "@nuxt/image": "^1.5.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
-    "@nuxt/fonts": "latest"
+    "eslint-config-custom": "*",
+    "nuxt": "^3.9.0",
+    "vue": "^3.4.6",
+    "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@nuxt/ui": "^2.14.2",
