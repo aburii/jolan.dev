@@ -1,38 +1,20 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="wrapper">
-    <div class="w-full flex flex-col-reverse lg:flex-row uppercase font-brand">
-      <div
-        class="w-full h-full text-4xl sm:text-6xl xl:text-7xl 2xl:text-[82px] font-bold"
-      >
-        <span class="block">Jolan,</span>
-        <span class="block">Web developer</span>
-      </div>
-      <div class="w-full h-full text-end self-end text-xl sm:text-3xl">
-        Paris <br />
-        <span>Available</span>
-      </div>
+  <section class="hero">
+    <div class="flex">
+      <div class="w-full text-start">title</div>
+      <div class="w-full text-end">status</div>
     </div>
-    <div class="flex flex-col lg:flex-row mt-16 gap-20">
-      <div class="w-full">
-        Labore qui esse culpa dolore in veniam duis enim do duis sunt
-        exercitation amet. Consectetur minim ea nulla irure. Deserunt ullamco
-        tempor pariatur tempor veniam Lorem velit eu est quis labore fugiat
-        labore cillum exercitation. Est aute culpa reprehenderit ad duis magna
-        nulla amet mollit. Sunt reprehenderit eiusmod consectetur excepteur
-        incididunt est qui. Consectetur ut incididunt Lorem reprehenderit culpa
-        qui ea ea quis sit officia voluptate.
-      </div>
-      <div class="w-full">
-        <NuxtImg
-          class="object-contain w-full h-full"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYLYEWL15mk8ls0_eD4FbXR7UCXB1Ng_LW47p4rSOipA&s"
-          alt=""
-        />
-      </div>
+    <div class="flex">
+      <div>description</div>
+      <div>carousel</div>
     </div>
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.hero {
+  height: calc(100vh - var(--header-size));
+}
+</style>
