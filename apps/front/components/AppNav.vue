@@ -13,6 +13,7 @@ const emit = defineEmits(["menu-selected"]);
         variant="link"
         to="/"
         label="Home"
+        color="white"
         class="header-link lowercase text-lg sm:text-xl font-bold"
         @click="emit('menu-selected')"
       />
@@ -22,6 +23,7 @@ const emit = defineEmits(["menu-selected"]);
         variant="link"
         to="/universe"
         label="Universe"
+        color="white"
         class="header-link lowercase text-lg sm:text-xl font-bold"
         @click="emit('menu-selected')"
       />
@@ -32,6 +34,7 @@ const emit = defineEmits(["menu-selected"]);
         to="/contact"
         label="Contact"
         class="header-link lowercase text-lg sm:text-xl font-bold"
+        color="white"
         @click="emit('menu-selected')"
       />
     </li>

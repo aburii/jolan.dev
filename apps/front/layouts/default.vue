@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-// todo: border-b on header's scroll
-</script>
-
 <template>
   <section class="min-h-full">
     <header class="header">
@@ -17,14 +13,15 @@
 
 <style scoped>
 .header {
-  @apply sticky top-0 z-50 min-h-[var(--header-size)] flex items-center w-full bg-cod-gray-950;
+  @apply fixed top-0 z-50 min-h-[var(--header-size)] flex items-center w-full;
 }
 .main-wrapper {
-  @apply relative px-6 md:px-16 lg:px-24;
-  min-height: calc(100vh - var(--header-size));
+  height: 100vh;
+  @apply relative;
 
   .main-content {
-    @apply px-3;
+    @apply px-6 relative top-[var(--header-size)] md:px-16 lg:px-24;
+    height: calc(100vh - var(--header-size));
   }
 }
 </style>

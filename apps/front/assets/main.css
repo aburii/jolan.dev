@@ -10,6 +10,6 @@ html, body, #__nuxt {
 
 :root {
   --font-family: "Outfit", system-ui, sans-serif;
-  --font-display: "Poppins", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --header-size: 80px;
 }
