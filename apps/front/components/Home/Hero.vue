@@ -1,34 +1,50 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="h-full">
-    <div class="w-full text-end">
+  <section class="hero">
+    <div class="w-full mt-36">
       <div
-        class="font-display text-2xl leading-normal md:text-5xl md:leading-snug font-black"
+        class="font-display text-end text-2xl leading-normal md:text-5xl md:leading-snug font-black"
       >
-        <p>Jolan,</p>
-        <p class="lowercase text-storm-dust-600">a developer building stuff</p>
+        <p>Jolan</p>
+        <p class="lowercase text-storm-dust-600">
+          "big things often have small beginnings."
+        </p>
       </div>
-      <div class="italic text-lg font-light">
+      <div class="italic text-end text-lg font-light">
         <UIcon name="i-heroicons-signal" class="align-middle text-green-500" />
         available
       </div>
-      <div>
-        Cupidatat fugiat duis exercitation nisi proident incididunt voluptate do
-        veniam eu labore velit. Adipisicing cupidatat sint dolor duis irure
-        veniam. Nulla ad cillum consequat nostrud tempor culpa irure. Qui
-        reprehenderit sit irure sit dolor voluptate qui ullamco. Ut sunt duis
-        non in voluptate consectetur velit esse deserunt mollit ex minim dolor
-        tempor aliqua. Nisi id pariatur dolore eiusmod cupidatat qui culpa
-        labore sunt sit exercitation consequat magna aliquip. Amet veniam anim
-        voluptate proident minim dolor sit dolorxe laborum magna cupidatat.
+      <div class="mt-10 text-lg w-1/2">
+        Commodo veniam et incididunt nulla cupidatat commodo incididunt mollit.
+        Magna do reprehenderit nisi quis aute veniam nostrud fugiat sit velit
+        elit Lorem anim nisi cillum. Velit magna deserunt eiusmod velit tempor
+        quis magna deserunt anim sunt ex. Proident qui voluptate voluptate
+        occaecat mollit laborum amet do nisi enim dolor ex magna elit pariatur.
       </div>
+      <section class="flex justify-between items-center mt-20">
+        <div class="flex gap-5">
+          <UButton color="black" size="lg" leading-icon="i-heroicons-envelope"
+            >Contact me</UButton
+          >
+          <UButton
+            color="black"
+            size="lg"
+            disabled
+            class="line-through"
+            leading-icon="i-heroicons-calendar"
+            >Make an appointment</UButton
+          >
+        </div>
+        <div class="flex items-center justify-center space-x-5">
+          <UIcon name="i-simple-icons-github" class="text-3xl" />
+          <UIcon name="i-simple-icons-instagram" class="text-3xl" />
+          <UIcon name="i-simple-icons-x" class="text-3xl" />
+          <UIcon name="i-simple-icons-linkedin" class="text-3xl" />
+        </div>
+      </section>
     </div>
   </section>
 </template>
 
-<style scoped>
-.hero {
-  height: calc(100vh - var(--header-size));
-}
-</style>
+<style scoped></style>

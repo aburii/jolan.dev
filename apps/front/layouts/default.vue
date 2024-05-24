@@ -13,7 +13,7 @@
 
 <style scoped>
 .header {
-  @apply fixed top-0 z-50 min-h-[var(--header-size)] flex items-center w-full;
+  @apply fixed top-0 z-50 min-h-[var(--header-size)] flex items-center w-full bg-white dark:bg-primary-950;
 }
 .main-wrapper {
   height: 100vh;
