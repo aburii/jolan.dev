@@ -11,7 +11,7 @@
           "big things often have small beginnings."
         </p>
       </div>
-      <div class="italic text-end text-lg font-light">
+      <div class="font-display text-end font-light">
         <UIcon name="i-heroicons-signal" class="align-middle text-green-500" />
         available
       </div>
@@ -24,23 +24,27 @@
       </div>
       <section class="flex justify-between items-center mt-20">
         <div class="flex gap-5">
-          <UButton color="black" size="lg" leading-icon="i-heroicons-envelope"
+          <UButton
+            color="black"
+            size="lg"
+            leading-icon="i-heroicons-envelope"
+            class="font-display"
             >Contact me</UButton
           >
           <UButton
             color="black"
             size="lg"
             disabled
-            class="line-through"
+            class="line-through font-display"
             leading-icon="i-heroicons-calendar"
             >Make an appointment</UButton
           >
         </div>
-        <div class="flex items-center justify-center space-x-5">
+        <div class="flex items-center justify-center space-x-10">
           <UIcon name="i-simple-icons-github" class="text-3xl" />
+          <UIcon name="i-simple-icons-linkedin" class="text-3xl" />
           <UIcon name="i-simple-icons-instagram" class="text-3xl" />
           <UIcon name="i-simple-icons-x" class="text-3xl" />
-          <UIcon name="i-simple-icons-linkedin" class="text-3xl" />
         </div>
       </section>
     </div>
