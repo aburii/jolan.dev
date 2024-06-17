@@ -22,7 +22,7 @@
         quis magna deserunt anim sunt ex. Proident qui voluptate voluptate
         occaecat mollit laborum amet do nisi enim dolor ex magna elit pariatur.
       </div>
-      <section class="flex justify-between items-center mt-20">
+      <section class="flex justify-between items-center mt-24">
         <div class="flex gap-5">
           <UButton
             color="black"
@@ -48,6 +48,7 @@
         </div>
       </section>
     </div>
+    <ScrollIndicator class="bottom-[80px] right-1/2 left-1/2" />
   </section>
 </template>
 
