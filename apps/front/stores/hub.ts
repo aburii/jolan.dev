@@ -1,7 +1,7 @@
 import type { HubItem } from "~/types/HubItem";
 
 export const useHubStore = defineStore("hub", () => {
-  const items = ref<HubItem[]>([]);
+  const subItems = ref<HubItem[]>([]);
   const nextItem = ref<HubItem | null>(null);
   const router = useRouter();
 
@@ -10,12 +10,25 @@ export const useHubStore = defineStore("hub", () => {
       // anchors
       return;
     }
-    items.value = [];
+    subItems.value = [];
     nextItem.value = null;
   });
 
+  function setItemsWithDelay(items: HubItem[], next: HubItem) {
+    subItems.value = [];
+    nextItem.value = null;
+
+    useTimeout(500, {
+      callback: () => {
+        subItems.value = items;
+        nextItem.value = next;
+      },
+    });
+  }
+
   return {
-    items,
+    items: subItems,
     nextItem,
+    setItemsWithDelay,
   };
 });

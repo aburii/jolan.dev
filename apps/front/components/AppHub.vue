@@ -5,6 +5,10 @@ const route = useRoute();
 const hubStore = useHubStore();
 const visible = ref(false);
 useTimeout(500, { callback: () => (visible.value = true) });
+
+watch(hubStore.items, () => {
+  visible.value = false;
+});
 </script>
 
 <template>

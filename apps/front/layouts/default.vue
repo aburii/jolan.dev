@@ -1,6 +1,9 @@
 <template>
   <section class="min-h-full w-full">
-    <slot />
+    <AppHub />
+    <main class="px-10">
+      <slot />
+    </main>
   </section>
 </template>
 

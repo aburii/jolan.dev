@@ -3,21 +3,22 @@ import { useHubStore } from "~/stores/hub";
 
 const hubStore = useHubStore();
 
-hubStore.items = [
+hubStore.setItemsWithDelay(
+  [
+    {
+      label: "Projets",
+      anchor: "#projects",
+    },
+    {
+      label: "Contact",
+      anchor: "#contact",
+    },
+  ],
   {
-    label: "Non",
-    anchor: "#projects",
+    label: "Universe",
+    anchor: "/universe",
   },
-  {
-    label: "Oui",
-    anchor: "#contact",
-  },
-];
-
-hubStore.nextItem = {
-  label: "Profile",
-  anchor: "/yessss",
-};
+);
 </script>
 
 <template>
