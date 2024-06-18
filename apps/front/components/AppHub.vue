@@ -3,11 +3,42 @@ import { useHubStore } from "~/stores/hub";
 
 const route = useRoute();
 const hubStore = useHubStore();
-const visible = ref(false);
-useTimeout(500, { callback: () => (visible.value = true) });
+const currentVisibleAnchor = ref<string | null>(null);
+const windowScroll = useWindowScroll();
 
-watch(hubStore.items, () => {
-  visible.value = false;
+onMounted(() => {
+  const handleScroll = () => {
+    const currentScrollY = windowScroll.y.value;
+    let foundVisibleAnchor = false;
+
+    hubStore.items.forEach((item) => {
+      const elementId = item.anchor.replace("#", "");
+      const htmlEl = document.getElementById(elementId);
+
+      if (htmlEl) {
+        const elementTop = htmlEl.offsetTop;
+        const elementBottom = elementTop + htmlEl.offsetHeight;
+
+        if (
+          currentScrollY >= elementTop - 100 &&
+          currentScrollY <= elementBottom - 100
+        ) {
+          currentVisibleAnchor.value = item.anchor;
+          foundVisibleAnchor = true;
+        }
+      }
+    });
+
+    if (!foundVisibleAnchor) {
+      currentVisibleAnchor.value = null;
+    }
+  };
+
+  const optimizedHandleScroll = () => {
+    requestAnimationFrame(handleScroll);
+  };
+
+  document.addEventListener("scroll", optimizedHandleScroll);
 });
 </script>
 
@@ -15,7 +46,7 @@ watch(hubStore.items, () => {
   <div class="fixed w-full bottom-[50px]">
     <Transition>
       <nav
-        v-if="hubStore.items.length > 0 && visible"
+        v-if="hubStore.items.length > 0"
         class="mx-auto text-sm min-w-0 max-w-fit box-border rounded-lg bg-storm-dust-950 bg-opacity-90"
       >
         <ul class="flex gap-2 p-1.5 rounded-lg-lg">
@@ -36,11 +67,11 @@ watch(hubStore.items, () => {
               >
                 <ULink
                   :to="{ path: route.path, hash: item.anchor }"
-                  :active="route.fullPath.endsWith(item.anchor)"
+                  :active="currentVisibleAnchor === item.anchor"
                   active-class="
                     !border-cod-gray-300 !text-cod-gray-200
                   "
-                  class="decoration-0 hover:border-cod-gray-400 capitalize px-3 rounded-lg border border-cod-gray-500 text-cod-gray-500 inline-flex justify-center items-center h-[48px] leading-[32px]"
+                  class="transition-colors duration-300 ease decoration-0 hover:border-cod-gray-400 capitalize px-3 rounded-lg border border-cod-gray-500 text-cod-gray-500 inline-flex justify-center items-center h-[48px] leading-[32px]"
                 >
                   {{ item.label }}
                 </ULink>

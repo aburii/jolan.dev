@@ -10,6 +10,10 @@ hubStore.setItemsWithDelay(
       anchor: "#projects",
     },
     {
+      label: "Expériences",
+      anchor: "#experiences",
+    },
+    {
       label: "Contact",
       anchor: "#contact",
     },
@@ -25,6 +29,7 @@ hubStore.setItemsWithDelay(
   <div class="h-full">
     <HomeHero class="py-1 h-full" />
     <HomeHero id="projects" class="py-1 h-full" />
+    <HomeHero id="experiences" class="py-1 h-full" />
     <HomeHero id="contact" class="py-1 h-full" />
   </div>
 </template>

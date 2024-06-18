@@ -4,6 +4,9 @@
     <main class="px-10">
       <slot />
     </main>
+    <footer>
+      <AppFooter />
+    </footer>
   </section>
 </template>
 
