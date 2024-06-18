@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="hero">
+  <section class="hero w-full">
     <div class="w-full mt-36">
       <div
         class="font-display text-end text-2xl leading-normal md:text-5xl md:leading-snug font-black"
@@ -48,7 +48,6 @@
         </div>
       </section>
     </div>
-    <ScrollIndicator class="bottom-[80px] right-1/2 left-1/2" />
   </section>
 </template>
 

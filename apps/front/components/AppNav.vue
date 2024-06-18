@@ -1,14 +1,10 @@
 <script setup lang="ts">
-defineProps<{
-  horizontal: boolean;
-}>();
-
 const emit = defineEmits(["menu-selected"]);
 </script>
 
 <template>
   <ul class="app-nav">
-    <li :class="{ 'w-1/3 text-start': horizontal }">
+    <li class="w-1/3 text-start">
       <UButton
         variant="link"
         to="/"
@@ -18,7 +14,7 @@ const emit = defineEmits(["menu-selected"]);
         @click="emit('menu-selected')"
       />
     </li>
-    <li :class="{ 'w-1/3 text-center': horizontal }">
+    <li class="w-1/3 text-center">
       <UButton
         variant="link"
         to="/universe"
@@ -28,7 +24,7 @@ const emit = defineEmits(["menu-selected"]);
         @click="emit('menu-selected')"
       />
     </li>
-    <li :class="{ 'w-1/3 text-center': horizontal }">
+    <li class="w-1/3 text-end">
       <UButton
         variant="link"
         to="/contact"

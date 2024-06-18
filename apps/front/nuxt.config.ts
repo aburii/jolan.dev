@@ -8,7 +8,13 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/ui", "@vueuse/nuxt", "@nuxt/fonts", "@nuxt/image"],
+  modules: [
+    "@nuxt/ui",
+    "@vueuse/nuxt",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@pinia/nuxt",
+  ],
 
   fonts: {
     experimental: {
@@ -25,6 +31,13 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/main.css"],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 
   typescript: {
     strict: true,
