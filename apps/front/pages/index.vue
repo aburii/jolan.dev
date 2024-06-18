@@ -6,22 +6,25 @@ const hubStore = useHubStore();
 hubStore.items = [
   {
     label: "Projets",
-    link: "#projects",
+    anchor: "#projects",
   },
   {
     label: "Contact",
-    link: "#contact",
+    anchor: "#contact",
   },
 ];
 
 hubStore.nextItem = {
   label: "Universe",
-  link: "/universe",
+  anchor: "/universe",
 };
 </script>
 
 <template>
   <div class="h-full">
+    <AppHub />
+    <HomeHero class="py-1 h-full" />
+    <HomeHero id="projects" class="py-1 h-full" />
     <HomeHero class="py-1 h-full" />
   </div>
 </template>

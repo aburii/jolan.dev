@@ -5,7 +5,11 @@ export const useHubStore = defineStore("hub", () => {
   const nextItem = ref<HubItem | null>(null);
   const router = useRouter();
 
-  router.beforeEach(() => {
+  router.beforeEach((a, b) => {
+    if (a.path === b.path) {
+      // anchors
+      return;
+    }
     items.value = [];
     nextItem.value = null;
   });

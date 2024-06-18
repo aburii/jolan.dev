@@ -1,19 +1,14 @@
 <script setup lang="ts">
 import { useHubStore } from "~/stores/hub";
 
-const props = defineProps<{
-  delay: number;
-}>();
-
 const route = useRoute();
 const hubStore = useHubStore();
-
 const visible = ref(false);
-useTimeout(props.delay, { callback: () => (visible.value = true) });
+useTimeout(500, { callback: () => (visible.value = true) });
 </script>
 
 <template>
-  <div class="fixed w-full">
+  <div class="fixed w-full bottom-[50px]">
     <Transition>
       <nav
         v-if="hubStore.items.length > 0 && visible"
@@ -22,10 +17,10 @@ useTimeout(props.delay, { callback: () => (visible.value = true) });
         <ul class="flex gap-2 p-1.5 rounded-lg-lg">
           <li class="flex">
             <ULink
-              to="/"
-              class="lowercase bg-cod-gray-950 text-lg font-bold inline-flex items-center justify-center rounded-lg px-4 h-[60px] leading-loose"
+              :to="{ path: '/' }"
+              class="lowercase bg-cod-gray-950 text-lg font-bold inline-flex items-center justify-center rounded-lg px-5 md:px-4 h-[48px] md:h-[60px] leading-loose"
             >
-              jolan
+              j<span class="md:inline hidden">olan</span>
             </ULink>
           </li>
           <li class="rounded-lg bg-cod-gray-900 px-1.5 hidden md:block">
@@ -36,10 +31,10 @@ useTimeout(props.delay, { callback: () => (visible.value = true) });
                 class="flex"
               >
                 <ULink
-                  :to="item.link"
-                  :active="route.fullPath.endsWith(item.link)"
+                  :to="{ path: route.path, hash: item.anchor }"
+                  :active="route.fullPath.endsWith(item.anchor)"
                   active-class="
-                    border-cod-gray-300 text-cod-gray-200
+                    !border-cod-gray-300 !text-cod-gray-200
                   "
                   class="decoration-0 hover:border-cod-gray-400 capitalize px-3 rounded-lg border border-cod-gray-500 text-cod-gray-500 inline-flex justify-center items-center h-[48px] leading-[32px]"
                 >
@@ -50,10 +45,14 @@ useTimeout(props.delay, { callback: () => (visible.value = true) });
           </li>
           <li class="flex">
             <NuxtLink
-              class="px-4 bg-cod-gray-100 font-semibold text-black rounded-lg inline-flex h-[60px] justify-center items-center"
-              :to="hubStore.nextItem?.link"
+              class="px-4 bg-cod-gray-100 font-semibold text-black rounded-lg inline-flex h-[48px] md:h-[60px] justify-center items-center"
+              :to="hubStore.nextItem?.anchor"
             >
               {{ hubStore.nextItem?.label }}
+              <UIcon
+                name="i-heroicons-arrow-right"
+                class="ml-2 align-baseline text"
+              ></UIcon>
             </NuxtLink>
           </li>
         </ul>
