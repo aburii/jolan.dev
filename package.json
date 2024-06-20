@@ -2,12 +2,16 @@
   "name": "jolan-dev",
   "devDependencies": {
     "turbo": "latest",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "eslint": "^9.5.0",
+    "prettier": "^3.3.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "bun@1.0.30",
+  "packageManager": "bun@1.1.15",
   "private": true,
   "scripts": {
     "build": "turbo build",
