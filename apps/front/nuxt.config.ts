@@ -2,34 +2,49 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  ssr: false,
+
   app: {
+    pageTransition: { name: 'page', mode: 'out-in', appear: true },
+
     head: {
-      title: "Jolan - Web Developer",
+      title: 'Jolan - Web Developer',
     },
   },
 
   modules: [
-    "@nuxt/ui",
-    "@vueuse/nuxt",
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          Roboto: true,
-          Raleway: true,
-        },
-      },
-    ],
+    '@nuxt/ui',
+    '@vueuse/nuxt',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@pinia/nuxt',
   ],
 
-  colorMode: {
-    preference: "dark",
+  fonts: {
+    experimental: {
+      processCSSVariables: true,
+    },
   },
 
-  css: ["~/assets/main.css"],
+  ui: {
+    icons: ['simple-icons'],
+  },
+
+  colorMode: {
+    preference: 'dark',
+  },
+
+  css: ['~/assets/main.css'],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 
   typescript: {
     strict: true,
     shim: false,
   },
-});
+})
