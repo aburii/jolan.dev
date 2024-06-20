@@ -1,26 +1,24 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="w-full h-screen">
-    <div class="mt-36">
-      <div
-        class="font-display text-end text-2xl leading-normal md:text-5xl md:leading-snug font-black"
-      >
-        <p>Jolan</p>
-        <p class="lowercase text-storm-dust-600">
-          "big things often have small beginnings."
+  <section class="mx-auto h-screen max-w-fit">
+    <div class="mt-60 md:mt-96">
+      <div class="font-display font-black leading-loose">
+        <p class="text-center text-5xl md:text-6xl">
+          jolan.
+        </p>
+        <p
+          class="mt-5 text-center text-2xl lowercase italic text-storm-dust-600 md:text-3xl"
+        >
+          "big things often have small beinnings."
         </p>
       </div>
-      <div class="font-display text-end font-light">
-        <UIcon name="i-heroicons-signal" class="align-middle text-green-500" />
-        available
-      </div>
-      <div class="mt-10 text-lg w-1/2">
-        Commodo veniam et incididunt nulla cupidatat commodo incididunt mollit.
-        Magna do reprehenderit nisi quis aute veniam nostrud fugiat sit velit
-        elit Lorem anim nisi cillum. Velit magna deserunt eiusmod velit tempor
-        quis magna deserunt anim sunt ex. Proident qui voluptate voluptate
-        occaecat mollit laborum amet do nisi enim dolor ex magna elit pariatur.
+      <div class="mx-auto mt-5 w-fit text-center text-sm md:w-2/5">
+        <p class="leading-snug md:leading-relaxed">
+          With over four years of experience as a web developer, I specialize in
+          creating elegant, minimalist designs using black and white, utilizing
+          ample space for a clean, sophisticated look.
+        </p>
       </div>
     </div>
   </section>

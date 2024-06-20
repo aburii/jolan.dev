@@ -1,65 +1,65 @@
 <script setup lang="ts">
-import { useHubStore } from "~/stores/hub";
+import { useHubStore } from '~/stores/hub'
 
-const route = useRoute();
-const hubStore = useHubStore();
-const currentVisibleAnchor = ref<string | null>(null);
-const windowScroll = useWindowScroll();
+const route = useRoute()
+const hubStore = useHubStore()
+const currentVisibleAnchor = ref<string | null>(null)
+const windowScroll = useWindowScroll()
 
 onMounted(() => {
   const handleScroll = () => {
-    const currentScrollY = windowScroll.y.value;
-    let foundVisibleAnchor = false;
+    const currentScrollY = windowScroll.y.value
+    let foundVisibleAnchor = false
 
     hubStore.items.forEach((item) => {
-      const elementId = item.anchor.replace("#", "");
-      const htmlEl = document.getElementById(elementId);
+      const elementId = item.anchor.replace('#', '')
+      const htmlEl = document.getElementById(elementId)
 
       if (htmlEl) {
-        const elementTop = htmlEl.offsetTop;
-        const elementBottom = elementTop + htmlEl.offsetHeight;
+        const elementTop = htmlEl.offsetTop
+        const elementBottom = elementTop + htmlEl.offsetHeight
 
         if (
           currentScrollY >= elementTop - 100 &&
           currentScrollY <= elementBottom - 100
         ) {
-          currentVisibleAnchor.value = item.anchor;
-          foundVisibleAnchor = true;
+          currentVisibleAnchor.value = item.anchor
+          foundVisibleAnchor = true
         }
       }
-    });
+    })
 
     if (!foundVisibleAnchor) {
-      currentVisibleAnchor.value = null;
+      currentVisibleAnchor.value = null
     }
-  };
+  }
 
   const optimizedHandleScroll = () => {
-    requestAnimationFrame(handleScroll);
-  };
+    requestAnimationFrame(handleScroll)
+  }
 
-  document.addEventListener("scroll", optimizedHandleScroll);
-});
+  document.addEventListener('scroll', optimizedHandleScroll)
+})
 </script>
 
 <template>
-  <div class="fixed w-full bottom-[50px]">
+  <div class="fixed bottom-[50px] w-full">
     <Transition>
       <nav
         v-if="hubStore.items.length > 0"
-        class="mx-auto text-sm min-w-0 max-w-fit box-border rounded-lg bg-storm-dust-950 bg-opacity-90"
+        class="mx-auto box-border min-w-0 max-w-fit rounded-lg bg-storm-dust-950 bg-opacity-90 text-sm"
       >
-        <ul class="flex gap-2 p-1.5 rounded-lg-lg">
+        <ul class="rounded-lg-lg flex gap-2 p-1.5">
           <li class="flex">
             <ULink
               :to="{ path: '/' }"
-              class="lowercase bg-cod-gray-950 text-lg font-bold inline-flex items-center justify-center rounded-lg px-5 md:px-4 h-[48px] md:h-[60px] leading-loose"
+              class="inline-flex h-[48px] items-center justify-center rounded-lg bg-cod-gray-950 px-5 text-lg font-bold lowercase leading-loose md:h-[60px] md:px-4"
             >
-              j<span class="md:inline hidden">olan</span>
+              j<span class="hidden md:inline">olan</span>
             </ULink>
           </li>
-          <li class="rounded-lg bg-cod-gray-900 px-1.5 hidden md:block">
-            <ul class="rounded-lg h-full flex items-center space-x-2">
+          <li class="hidden rounded-lg bg-cod-gray-900 px-1.5 md:block">
+            <ul class="flex h-full items-center space-x-2 rounded-lg">
               <li
                 v-for="(item, i) in hubStore.items"
                 :key="`${item.label}-${i}`"
@@ -71,7 +71,7 @@ onMounted(() => {
                   active-class="
                     !border-cod-gray-300 !text-cod-gray-200
                   "
-                  class="transition-colors duration-300 ease decoration-0 hover:border-cod-gray-400 capitalize px-3 rounded-lg border border-cod-gray-500 text-cod-gray-500 inline-flex justify-center items-center h-[48px] leading-[32px]"
+                  class="ease inline-flex h-[48px] items-center justify-center rounded-lg border border-cod-gray-500 px-3 capitalize leading-[32px] text-cod-gray-500 decoration-0 transition-colors duration-300 hover:border-cod-gray-400"
                 >
                   {{ item.label }}
                 </ULink>
@@ -80,14 +80,14 @@ onMounted(() => {
           </li>
           <li class="flex">
             <NuxtLink
-              class="px-4 bg-cod-gray-100 font-semibold text-black rounded-lg inline-flex h-[48px] md:h-[60px] justify-center items-center"
+              class="inline-flex h-[48px] items-center justify-center rounded-lg bg-cod-gray-100 px-4 font-semibold text-black md:h-[60px]"
               :to="hubStore.nextItem?.anchor"
             >
               {{ hubStore.nextItem?.label }}
               <UIcon
                 name="i-heroicons-arrow-right"
-                class="ml-2 align-baseline text"
-              ></UIcon>
+                class="text ml-2 align-baseline"
+              />
             </NuxtLink>
           </li>
         </ul>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 defineProps<{
-  size: "xs" | "sm" | "md" | "lg" | "xl";
-}>();
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+}>()
 </script>
 
 <template>
   <UAvatar
-    :size="size"
+    :size
     src="https://avatars.githubusercontent.com/u/71981971?v=4"
     alt="Jolan"
   />

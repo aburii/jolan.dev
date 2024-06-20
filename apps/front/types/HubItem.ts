@@ -1,4 +1,4 @@
-export interface HubItem {
+export type HubItem = {
   label: string;
   anchor: string;
 }

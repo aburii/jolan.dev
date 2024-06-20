@@ -8,16 +8,16 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in', appear: true },
 
     head: {
-      title: "Jolan - Web Developer",
+      title: 'Jolan - Web Developer',
     },
   },
 
   modules: [
-    "@nuxt/ui",
-    "@vueuse/nuxt",
-    "@nuxt/fonts",
-    "@nuxt/image",
-    "@pinia/nuxt",
+    '@nuxt/ui',
+    '@vueuse/nuxt',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@pinia/nuxt',
   ],
 
   fonts: {
@@ -27,14 +27,14 @@ export default defineNuxtConfig({
   },
 
   ui: {
-    icons: ["simple-icons"],
+    icons: ['simple-icons'],
   },
 
   colorMode: {
-    preference: "dark",
+    preference: 'dark',
   },
 
-  css: ["~/assets/main.css"],
+  css: ['~/assets/main.css'],
 
   postcss: {
     plugins: {
@@ -47,4 +47,4 @@ export default defineNuxtConfig({
     strict: true,
     shim: false,
   },
-});
+})

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const emit = defineEmits(["menu-selected"]);
+const emit = defineEmits(['menu-selected'])
 </script>
 
 <template>
@@ -10,7 +10,7 @@ const emit = defineEmits(["menu-selected"]);
         to="/"
         label="Home"
         color="white"
-        class="header-link lowercase text-lg sm:text-xl font-bold"
+        class="header-link text-lg font-bold lowercase sm:text-xl"
         @click="emit('menu-selected')"
       />
     </li>
@@ -20,7 +20,7 @@ const emit = defineEmits(["menu-selected"]);
         to="/universe"
         label="Universe"
         color="white"
-        class="header-link lowercase text-lg sm:text-xl font-bold"
+        class="header-link text-lg font-bold lowercase sm:text-xl"
         @click="emit('menu-selected')"
       />
     </li>
@@ -29,7 +29,7 @@ const emit = defineEmits(["menu-selected"]);
         variant="link"
         to="/contact"
         label="Contact"
-        class="header-link lowercase text-lg sm:text-xl font-bold"
+        class="header-link text-lg font-bold lowercase sm:text-xl"
         color="white"
         @click="emit('menu-selected')"
       />
