@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   ssr: false,
 
   app: {
+    pageTransition: { name: 'page', mode: 'out-in', appear: true },
+
     head: {
       title: "Jolan - Web Developer",
     },
@@ -16,7 +18,6 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/image",
     "@pinia/nuxt",
-    "@nuxt/eslint"
   ],
 
   fonts: {
