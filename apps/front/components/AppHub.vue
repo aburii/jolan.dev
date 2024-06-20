@@ -46,7 +46,6 @@ onMounted(() => {
   <div class="fixed bottom-[50px] w-full">
     <Transition>
       <nav
-        v-if="hubStore.items.length > 0"
         class="mx-auto box-border min-w-0 max-w-fit rounded-lg bg-storm-dust-950 bg-opacity-90 text-sm"
       >
         <ul class="rounded-lg-lg flex gap-2 p-1.5">
@@ -58,7 +57,10 @@ onMounted(() => {
               j<span class="hidden md:inline">olan</span>
             </ULink>
           </li>
-          <li class="hidden rounded-lg bg-cod-gray-900 px-1.5 md:block">
+          <li
+            v-if="hubStore.items.length > 0"
+            class="hidden rounded-lg bg-cod-gray-900 px-1.5 md:block"
+          >
             <ul class="flex h-full items-center space-x-2 rounded-lg">
               <li
                 v-for="(item, i) in hubStore.items"

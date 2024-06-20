@@ -4,16 +4,7 @@ import { useHubStore } from '~/stores/hub'
 const hubStore = useHubStore()
 
 hubStore.setItemsWithDelay(
-  [
-    {
-      label: 'Projets',
-      anchor: '#projects',
-    },
-    {
-      label: 'Contact',
-      anchor: '#contact',
-    },
-  ],
+  [],
   {
     label: 'Universe',
     anchor: '/universe',
@@ -25,7 +16,7 @@ hubStore.setItemsWithDelay(
   <section class="flex h-full items-center justify-center">
     <AppHub />
 
-    <span class="text-4xl font-bold leading-snug text-storm-dust-600">
+    <span class="font-bold">
       Work in progress
       <UIcon
         name="i-heroicons-wrench-screwdriver-solid"
