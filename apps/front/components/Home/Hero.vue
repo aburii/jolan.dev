@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="mx-auto h-screen max-w-fit">
+  <section class="mx-auto h-screen max-w-fit py-1">
     <div class="mt-60 md:mt-96">
       <div class="font-display font-black leading-loose">
         <p class="text-center text-5xl md:text-6xl">
