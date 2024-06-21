@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    preset: 'bun'
+  },
+
   modules: [
     '@nuxt/ui',
     '@vueuse/nuxt',
