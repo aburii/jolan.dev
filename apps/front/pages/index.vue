@@ -4,10 +4,15 @@ import { useHubStore } from '~/stores/hub'
 const hubStore = useHubStore()
 
 hubStore.setItemsWithDelay(
-  [],
+  [
+    {
+      label: 'Projects',
+      link: '#projects'
+    }
+  ],
   {
     label: 'Universe',
-    anchor: '/universe',
+    link: '/universe',
   },
 )
 </script>
@@ -15,6 +20,7 @@ hubStore.setItemsWithDelay(
 <template>
   <div class="h-full">
     <HomeHero />
+    <HomeProjects id="projects" />
   </div>
 </template>
 <style scoped></style>
