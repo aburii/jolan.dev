@@ -19,8 +19,9 @@ hubStore.setItemsWithDelay(
 
 <template>
   <div class="h-full">
-    <HomeHero />
-    <HomeProjects id="projects" />
+    <HomeHero class="px-5" />
+    <HomeProjects />
+    <HomeHero class="px-5" />
   </div>
 </template>
 <style scoped></style>

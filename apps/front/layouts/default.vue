@@ -3,7 +3,7 @@
 <template>
   <section class="min-h-full w-full">
     <AppHub />
-    <main class="px-5">
+    <main>
       <slot />
     </main>
   </section>

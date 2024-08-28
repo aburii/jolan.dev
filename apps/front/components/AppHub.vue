@@ -43,7 +43,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="fixed bottom-[50px] w-full">
+  <div class="fixed bottom-[50px] z-50 w-full">
     <Transition>
       <nav
         v-if="hubStore.nextItem || hubStore.items.length > 0"

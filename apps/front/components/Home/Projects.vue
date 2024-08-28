@@ -1,14 +1,31 @@
 <script setup lang="ts">
-const projects = ref([
+import type { IProject } from '~/types/Project'
+
+const projects = ref<IProject[]>([
   {
-    title: 'Lana'
+    title: 'jolan.dev',
+    description: 'Description of lana here',
+    imageUrl: '/images/mockline.screen.png',
+    primaryColor: '#FFFFFF'
   },
   {
-    title: 'Mockline'
+    title: 'Mockline',
+    description: 'description of mockline here',
+    imageUrl: '/images/mockline.screen.png',
+    primaryColor: '#1E1F20'
   },
   {
-    title: 'Tandem'
-  }
+    title: 'IND',
+    description: 'description of tandem here',
+    imageUrl: '/images/mockline.screen.png',
+    primaryColor: '#D65D65'
+  },
+  {
+    title: 'Lana',
+    description: '',
+    imageUrl: '/images/lana.screen.png',
+    primaryColor: '#FA903E'
+  },
 ])
 
 const index = ref(0)
@@ -18,20 +35,35 @@ const selectedProject = computed(() => {
 </script>
 
 <template>
-  <div class="flex h-screen justify-between">
-    <ul class="h-full">
-      <li v-for="(p, i) in projects" :key="`${p.title}-${i}`" class="font-display text-5xl font-black capitalize hover:scale-90" @click.prevent="index = i">
-        {{ p.title }}
-      </li>
-    </ul>
-    <div class="h-full">
-      <div v-if="selectedProject">
-        {{ selectedProject }} is selected
+  <div id="projects">
+    <div class="desktop-container hidden h-screen pl-5 lg:flex">
+      <div class="projects-title flex h-fit w-1/3 flex-col justify-between space-y-6 self-center px-10">
+        <div
+          v-for="(p, i) in projects"
+          :id="'project-title-' + i"
+          :key="p.title"
+          class="w-fit cursor-pointer text-3xl font-black transition-all duration-200 hover:ml-5 hover:scale-125"
+          :class="{ 'text-3xl opacity-60': index !== i, 'ml-5 scale-125': index === i }"
+          @mouseover="index = i"
+        >
+          {{ p.title }}
+        </div>
+      </div>
+      <div v-if="selectedProject" class="project-content flex flex-grow flex-row justify-end">
+        <div
+          class="h-2/3 w-full self-center rounded-bl-lg rounded-tl-xl"
+          :style="{ backgroundImage: 'url(' +
+                      selectedProject.imageUrl +
+                      ')', backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    boxShadow: '0 0 20px 5px' + selectedProject.primaryColor
+          }"
+        />
       </div>
     </div>
+    <HorizontalScroll class="block h-full lg:hidden" :projects />
   </div>
 </template>
 
-<style scoped>
-
+<style>
 </style>
