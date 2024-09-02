@@ -12,7 +12,7 @@ const projects = ref<IProject[]>([
     title: 'Mockline',
     description: 'description of mockline here',
     imageUrl: '/images/mockline.screen.png',
-    primaryColor: '#1E1F20'
+    primaryColor: '#3D3D3D'
   },
   {
     title: 'IND',

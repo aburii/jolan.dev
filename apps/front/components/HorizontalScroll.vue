@@ -45,17 +45,19 @@ onMounted(() => {
 <template>
   <section class="pin-section">
     <div class="scrollable-content">
-      <div class="item">
-        Item 1
-      </div>
-      <div class="item">
-        Item 2
-      </div>
-      <div class="item">
-        Item 3
-      </div>
-      <div class="item">
-        Item 4
+      <div v-for="(project, index) in projects" :key="`project-${index}`" class="item px-5 pb-10">
+        <div
+          class="item-card rounded-xl bg-red-50"
+          :style="{ backgroundImage: 'url(' +
+                      project.imageUrl +
+                      ')', backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center center',
+                    boxShadow: '0 0 25px 5px' + project.primaryColor
+          }"
+        >
+          {{ project.title }}
+        </div>
       </div>
     </div>
   </section>
@@ -79,9 +81,11 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  background-color: #ccc;
-  border: 1px solid #000;
   box-sizing: border-box;
+
+  .item-card {
+    width: 100%;
+    height: 75%;
+  }
 }
 </style>
