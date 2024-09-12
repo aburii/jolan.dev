@@ -1,8 +1,16 @@
 <template>
-  <UContainer class="h-full">
-    <div class="max-w-5xl mx-auto h-full flex flex-col justify-center">
-      <h1 class="text-3xl mb-3 text-center">coming soon...</h1>
-      <UProgress animation="carousel" />
-    </div>
-  </UContainer>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter-from,
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+</style>

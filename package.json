@@ -1,5 +1,13 @@
 {
   "name": "jolan-dev",
+  "devDependencies": {
+    "turbo": "latest",
+    "typescript": "5.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.1.26",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -8,16 +16,11 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "devDependencies": {
-    "turbo": "latest",
-    "typescript": "5.3.3"
-  },
-  "engines": {
-    "node": ">=18"
-  },
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
-  "packageManager": "bun@1.0.30"
+  "dependencies": {
+    "@hrcd/eslint-config": "^2.0.2"
+  }
 }
