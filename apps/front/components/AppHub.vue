@@ -12,7 +12,7 @@ onMounted(() => {
     let foundVisibleAnchor = false
 
     hubStore.items.forEach((item) => {
-      const elementId = item.anchor.replace('#', '')
+      const elementId = item.link.replace('#', '')
       const htmlEl = document.getElementById(elementId)
 
       if (htmlEl) {
@@ -23,7 +23,7 @@ onMounted(() => {
           currentScrollY >= elementTop - 100 &&
           currentScrollY <= elementBottom - 100
         ) {
-          currentVisibleAnchor.value = item.anchor
+          currentVisibleAnchor.value = item.link
           foundVisibleAnchor = true
         }
       }
@@ -43,7 +43,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="fixed bottom-[50px] w-full">
+  <div class="fixed bottom-[50px] z-50 w-full">
     <Transition>
       <nav
         v-if="hubStore.nextItem || hubStore.items.length > 0"
@@ -69,8 +69,8 @@ onMounted(() => {
                 class="flex"
               >
                 <ULink
-                  :to="{ path: route.path, hash: item.anchor }"
-                  :active="currentVisibleAnchor === item.anchor"
+                  :to="{ path: route.path, hash: item.link }"
+                  :active="currentVisibleAnchor === item.link"
                   active-class="
                     !border-cod-gray-300 !text-cod-gray-200
                   "
@@ -84,7 +84,7 @@ onMounted(() => {
           <li class="flex">
             <NuxtLink
               class="inline-flex h-[48px] items-center justify-center rounded-lg bg-cod-gray-100 px-4 font-semibold text-black md:h-[60px]"
-              :to="hubStore.nextItem?.anchor"
+              :to="hubStore.nextItem?.link"
             >
               {{ hubStore.nextItem?.label }}
               <UIcon

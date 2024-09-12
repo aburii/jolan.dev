@@ -7,7 +7,7 @@ hubStore.setItemsWithDelay(
   [],
   {
     label: 'Universe',
-    anchor: '/universe',
+    link: '/universe',
   },
 )
 </script>
