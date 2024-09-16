@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="mx-auto h-screen max-w-fit py-1">
-    <div class="mt-60 md:mt-96">
+  <section class="mx-auto flex h-screen max-w-fit items-center py-1">
+    <div>
       <div class="font-display font-black leading-loose">
         <p class="text-center text-5xl md:text-6xl">
           jolan.
@@ -10,7 +10,7 @@
         <p
           class="mt-5 text-center text-2xl lowercase italic text-storm-dust-600 md:text-3xl"
         >
-          "big things often have small beinnings."
+          "big things often have small beginnings."
         </p>
       </div>
       <div class="mx-auto mt-5 w-fit text-center text-sm md:w-2/5">

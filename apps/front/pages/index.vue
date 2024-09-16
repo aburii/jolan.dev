@@ -16,12 +16,11 @@ hubStore.setItemsWithDelay(
   },
 )
 </script>
-
 <template>
   <div class="h-full">
     <HomeHero class="px-5" />
     <HomeProjects />
-    <HomeHero class="px-5" />
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+</style>
