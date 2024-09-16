@@ -43,7 +43,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="fixed bottom-[50px] z-50 w-full">
+  <div class="fixed bottom-[20px] z-50 w-full md:bottom-[50px]">
     <Transition>
       <nav
         v-if="hubStore.nextItem || hubStore.items.length > 0"
@@ -60,7 +60,7 @@ onMounted(() => {
           </li>
           <li
             v-if="hubStore.items.length > 0"
-            class="hidden rounded-lg bg-cod-gray-900 px-1.5 md:block"
+            class="hidden rounded-lg bg-cod-gray-900 px-1.5 lg:block"
           >
             <ul class="flex h-full items-center space-x-2 rounded-lg">
               <li

@@ -8,8 +8,12 @@ html, body, #__nuxt {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Wanted Sans';
+  src: local("Wanted Sans"), url("../public/WantedSansStdVariable.woff2") format(woff2);
+}
+
 :root {
   --font-family: "Outfit", system-ui, sans-serif;
-  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --header-size: 80px;
 }

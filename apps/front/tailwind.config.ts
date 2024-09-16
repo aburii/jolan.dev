@@ -43,7 +43,7 @@ export default {
       },
       fontFamily: {
         sans: 'var(--font-family)',
-        display: 'var(--font-display)',
+        display: ['Wanted Sans', { fontFeatureSettings: '"ss03"' }]
       },
     },
   },
