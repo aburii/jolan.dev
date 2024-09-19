@@ -8,6 +8,10 @@ hubStore.setItemsWithDelay(
     {
       label: 'Projects',
       link: '#projects'
+    },
+    {
+      label: 'About',
+      link: '#about'
     }
   ],
   {
@@ -20,6 +24,7 @@ hubStore.setItemsWithDelay(
   <div class="h-full">
     <HomeHero class="px-5" />
     <HomeProjects />
+    <HomeAbout class="px-5" />
   </div>
 </template>
 <style scoped>
