@@ -4,24 +4,28 @@ import type { IProject } from '~/types/Project'
 const projects = ref<IProject[]>([
   {
     title: 'jolan.dev',
+    date: '2024',
     description: 'Description of lana here',
     imageUrl: '/images/mockline.screen.png',
     primaryColor: '#FFFFFF'
   },
   {
-    title: 'Mockline',
-    description: 'description of mockline here',
-    imageUrl: '/images/mockline.screen.png',
-    primaryColor: '#3D3D3D'
-  },
-  {
     title: 'IND',
+    date: 'Work in progress',
     description: 'description of tandem here',
     imageUrl: '/images/mockline.screen.png',
     primaryColor: '#D65D65'
   },
   {
+    title: 'Mockline',
+    date: '2023-2024',
+    description: 'description of mockline here',
+    imageUrl: '/images/mockline.screen.png',
+    primaryColor: '#3D3D3D'
+  },
+  {
     title: 'Lana',
+    date: '2024',
     description: '',
     imageUrl: '/images/lana.screen.png',
     primaryColor: '#FA903E'

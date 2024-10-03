@@ -2,7 +2,9 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import type { IProject } from '~/types/Project'
 
-defineProps<{
+const hub = useHubStore()
+
+const props = defineProps<{
   projects: IProject[]
 }>()
 
@@ -11,10 +13,11 @@ const { $gsap } = useNuxtApp()
 $gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
-  const testitest = document.querySelector('.scrollable-content')
+  const scrollableContent = document.querySelector('.scrollable-content')
+  const pinSection = document.querySelector('.pin-section')
   const items = $gsap.utils.toArray('.item')
 
-  if (!testitest) {
+  if (!scrollableContent || !pinSection) {
     return
   }
 
@@ -22,10 +25,22 @@ onMounted(() => {
     xPercent: -100 * (items.length - 1),
     ease: 'power1.inOut',
     scrollTrigger: {
-      trigger: '.pin-section',
+      trigger: pinSection,
       pin: true,
-      scrub: 0.5,
-      end: () => `+=${testitest.scrollWidth - window.innerWidth}`,
+      scrub: 1,
+      markers: true,
+      onLeave: () => {
+        setTimeout(() => hub.nextItem = {
+          label: 'Universe',
+          link: '/universe',
+        }, 200)
+      },
+      onLeaveBack: () => {
+        setTimeout(() => hub.nextItem = {
+          label: 'Universe',
+          link: '/universe',
+        }, 200)
+      },
     }
   })
 
@@ -33,8 +48,22 @@ onMounted(() => {
     ScrollTrigger.create({
       trigger: item as any,
       containerAnimation: horizontalScroll,
-      start: () => 'left center',
-      end: () => 'right center',
+      onEnter: () => {
+        const project = props.projects[i]
+        hub.nextItem = {
+          label: `Visit ${project.title}`,
+          link: `/projects/${project.title}`
+        }
+      },
+      onEnterBack: () => {
+        const project = props.projects[i]
+        hub.nextItem = {
+          label: `Visit ${project.title}`,
+          link: `/projects/${project.title}`
+        }
+      },
+      start: () => 'left start',
+      end: () => 'right start',
     })
   })
 })
