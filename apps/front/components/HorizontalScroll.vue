@@ -28,7 +28,6 @@ onMounted(() => {
       trigger: pinSection,
       pin: true,
       scrub: 1,
-      markers: true,
       onLeave: () => {
         setTimeout(() => hub.nextItem = {
           label: 'Universe',
