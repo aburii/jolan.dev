@@ -1,14 +1,14 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="mx-auto flex h-screen max-w-fit items-center py-1">
+  <section class="mx-auto flex h-screen max-w-fit items-center bg-background py-1">
     <div>
       <div class="font-display font-black leading-loose">
         <p class="text-center text-5xl md:text-6xl">
           jolan.
         </p>
         <p
-          class="mt-5 text-center text-2xl lowercase italic text-storm-dust-600 md:text-3xl"
+          class="text-storm-dust-600 mt-5 text-center text-2xl lowercase italic md:text-3xl"
         >
           "big things often have small beginnings."
         </p>

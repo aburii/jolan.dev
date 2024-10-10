@@ -47,20 +47,20 @@ onMounted(() => {
     <Transition>
       <nav
         v-if="hubStore.nextItem || hubStore.items.length > 0"
-        class="mx-auto box-border min-w-0 max-w-fit rounded-lg bg-storm-dust-950 bg-opacity-90 text-sm"
+        class="bg-storm-dust-950 mx-auto box-border min-w-0 max-w-fit rounded-lg bg-opacity-90 text-sm"
       >
         <ul class="rounded-lg-lg flex gap-2 p-1.5">
           <li class="flex">
-            <ULink
-              :to="{ path: '/' }"
-              class="inline-flex h-[48px] items-center justify-center rounded-lg bg-cod-gray-950 px-5 text-lg font-bold lowercase leading-loose md:h-[60px] md:px-4"
+            <NuxtLink
+              to="/"
+              class="bg-cod-gray-950 inline-flex h-[48px] items-center justify-center rounded-lg px-5 text-lg font-bold lowercase leading-loose md:h-[60px] md:px-4"
             >
               j<span class="hidden md:inline">olan</span>
-            </ULink>
+            </NuxtLink>
           </li>
           <li
             v-if="hubStore.items.length > 0"
-            class="hidden rounded-lg bg-cod-gray-900 px-1.5 lg:block"
+            class="bg-cod-gray-900 hidden rounded-lg px-1.5 lg:block"
           >
             <ul class="flex h-full items-center space-x-2 rounded-lg">
               <li
@@ -68,26 +68,26 @@ onMounted(() => {
                 :key="`${item.label}-${i}`"
                 class="flex"
               >
-                <ULink
+                <NuxtLink
                   :to="{ path: route.path, hash: item.link }"
                   :active="currentVisibleAnchor === item.link"
                   active-class="
                     !border-cod-gray-300 !text-cod-gray-200
                   "
-                  class="ease inline-flex h-[48px] items-center justify-center rounded-lg border border-cod-gray-500 px-3 capitalize leading-[32px] text-cod-gray-500 decoration-0 transition-colors duration-300 hover:border-cod-gray-400"
+                  class="ease border-cod-gray-500 text-cod-gray-500 hover:border-cod-gray-400 inline-flex h-[48px] items-center justify-center rounded-lg border px-3 capitalize leading-[32px] decoration-0 transition-colors duration-300"
                 >
                   {{ item.label }}
-                </ULink>
+                </NuxtLink>
               </li>
             </ul>
           </li>
           <li class="flex">
             <NuxtLink
-              class="inline-flex h-[48px] items-center justify-center rounded-lg bg-cod-gray-100 px-4 font-semibold text-black md:h-[60px]"
+              class="bg-cod-gray-100 inline-flex h-[48px] items-center justify-center rounded-lg px-4 font-semibold text-black md:h-[60px]"
               :to="hubStore.nextItem?.link"
             >
               {{ hubStore.nextItem?.label }}
-              <UIcon
+              <Icon
                 name="i-heroicons-arrow-right"
                 class="text ml-2 align-baseline"
               />

@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
   ssr: false,
 
   app: {
@@ -17,11 +16,13 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/ui',
     '@vueuse/nuxt',
     '@nuxt/fonts',
     '@nuxt/image',
     '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
+    'shadcn-nuxt',
+    '@nuxt/icon',
   ],
 
   fonts: {
@@ -30,21 +31,12 @@ export default defineNuxtConfig({
     },
   },
 
-  colorMode: {
-    preference: 'dark',
-  },
-
   css: ['~/assets/main.css'],
-
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
 
   typescript: {
     strict: true,
     shim: false,
   },
+
+  compatibilityDate: '2024-10-10',
 })

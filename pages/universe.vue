@@ -18,7 +18,7 @@ hubStore.setItemsWithDelay(
 
     <span class="font-bold">
       Work in progress
-      <UIcon
+      <Icon
         name="i-heroicons-wrench-screwdriver-solid"
         class="align-sub"
       />

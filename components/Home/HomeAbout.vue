@@ -16,11 +16,11 @@
           </p>
           <div class="ml-0 mt-28 md:ml-10 md:mt-0">
             <NuxtLink
-              class="inline-flex h-[48px] items-center justify-center rounded-lg bg-cod-gray-100 px-4 font-semibold text-black md:h-[60px]"
+              class="bg-cod-gray-100 inline-flex h-[48px] items-center justify-center rounded-lg px-4 font-semibold text-black md:h-[60px]"
               to="/universe"
             >
               Into the verse
-              <UIcon
+              <Icon
                 name="i-heroicons-arrow-right"
                 class="text ml-2 align-baseline"
               />
