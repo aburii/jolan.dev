@@ -4,9 +4,9 @@ const currentYear = new Date().getFullYear()
 
 <template>
   <div
-    class="border-storm-dust-950 text-cod-gray-500 flex h-[50px] items-center border-t px-10"
+    class="flex h-[50px] items-center border-t border-neutral-900 px-10"
   >
-    <span class="text-start text-sm">
+    <span class="w-full text-end text-xs">
       © Jolan Brizard, {{ currentYear }} - All rights reserved
     </span>
   </div>

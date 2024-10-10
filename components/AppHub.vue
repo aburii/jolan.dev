@@ -47,20 +47,20 @@ onMounted(() => {
     <Transition>
       <nav
         v-if="hubStore.nextItem || hubStore.items.length > 0"
-        class="bg-storm-dust-950 mx-auto box-border min-w-0 max-w-fit rounded-lg bg-opacity-90 text-sm"
+        class="mx-auto box-border min-w-0 max-w-fit rounded-lg bg-neutral-900 text-sm"
       >
         <ul class="rounded-lg-lg flex gap-2 p-1.5">
           <li class="flex">
             <NuxtLink
               to="/"
-              class="bg-cod-gray-950 inline-flex h-[48px] items-center justify-center rounded-lg px-5 text-lg font-bold lowercase leading-loose md:h-[60px] md:px-4"
+              class="inline-flex h-[48px] items-center justify-center rounded-lg bg-background px-5 text-lg font-bold lowercase leading-loose md:h-[60px] md:px-4"
             >
               j<span class="hidden md:inline">olan</span>
             </NuxtLink>
           </li>
           <li
             v-if="hubStore.items.length > 0"
-            class="bg-cod-gray-900 hidden rounded-lg px-1.5 lg:block"
+            class="hidden rounded-lg bg-neutral-800 px-1.5 lg:block"
           >
             <ul class="flex h-full items-center space-x-2 rounded-lg">
               <li
@@ -69,12 +69,8 @@ onMounted(() => {
                 class="flex"
               >
                 <NuxtLink
-                  :to="{ path: route.path, hash: item.link }"
-                  :active="currentVisibleAnchor === item.link"
-                  active-class="
-                    !border-cod-gray-300 !text-cod-gray-200
-                  "
-                  class="ease border-cod-gray-500 text-cod-gray-500 hover:border-cod-gray-400 inline-flex h-[48px] items-center justify-center rounded-lg border px-3 capitalize leading-[32px] decoration-0 transition-colors duration-300"
+                  :to="item.link"
+                  :class="[{ '!border-primary !text-primary': currentVisibleAnchor === item.link }, 'ease inline-flex h-[48px] cursor-pointer items-center justify-center rounded-lg border border-neutral-700 px-3 capitalize leading-[32px] text-neutral-700 decoration-0 transition-colors duration-300 hover:border-primary hover:text-primary']"
                 >
                   {{ item.label }}
                 </NuxtLink>
@@ -83,7 +79,7 @@ onMounted(() => {
           </li>
           <li class="flex">
             <NuxtLink
-              class="bg-cod-gray-100 inline-flex h-[48px] items-center justify-center rounded-lg px-4 font-semibold text-black md:h-[60px]"
+              class="inline-flex h-[48px] items-center justify-center rounded-lg bg-primary px-4 font-semibold text-primary-foreground md:h-[60px]"
               :to="hubStore.nextItem?.link"
             >
               {{ hubStore.nextItem?.label }}
@@ -100,6 +96,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.router-exact-active-class {
+  border: red
+}
+
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.2s ease-in;

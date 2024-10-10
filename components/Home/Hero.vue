@@ -8,7 +8,7 @@
           jolan.
         </p>
         <p
-          class="text-storm-dust-600 mt-5 text-center text-2xl lowercase italic md:text-3xl"
+          class="mt-5 text-center text-2xl lowercase italic text-secondary md:text-3xl"
         >
           "big things often have small beginnings."
         </p>

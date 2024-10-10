@@ -53,7 +53,7 @@
     --input: 240 3.7% 15.9%;
  
     --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary-foreground: 240 3% 11%;
  
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -85,4 +85,5 @@
 :root {
   --font-family: "Outfit", system-ui, sans-serif;
   --header-size: 80px;
+  scroll-behavior: smooth;
 }
