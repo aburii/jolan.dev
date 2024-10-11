@@ -1,4 +1,5 @@
 const animate = require("tailwindcss-animate")
+const { setupInspiraUI } = require('@inspira-ui/plugins')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -86,5 +87,5 @@ module.exports = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, setupInspiraUI],
 }

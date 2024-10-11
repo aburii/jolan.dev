@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@iconify-json/simple-icons": "^1.1.102",
+    "@inspira-ui/plugins": "^0.0.1",
     "@nuxt/icon": "^1.5.5",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
@@ -30,7 +31,8 @@
     "@hrcd/eslint-config": "^2.0.2",
     "@nuxt/fonts": "latest",
     "@pinia/nuxt": "^0.5.1",
-    "@vueuse/core": "^10.9.0",
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/motion": "^2.2.5",
     "@vueuse/nuxt": "^10.9.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

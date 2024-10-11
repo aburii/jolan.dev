@@ -1,14 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <section class="mx-auto flex h-screen max-w-fit items-center bg-background py-1">
     <div>
       <div class="font-display font-black leading-loose">
-        <p class="text-center text-5xl md:text-6xl">
-          jolan.
-        </p>
+        <div class="hidden flex-col items-center justify-center md:flex">
+          <InspiraParticleImage
+            image-src="/images/jolan.png"
+            :responsive-width="false"
+            mouse-force="5"
+          />
+        </div>
+        <div class="flex flex-col items-center justify-center md:hidden">
+          <InspiraParticleImage
+            image-src="/images/jolan-mobile.png"
+            :responsive-width="false"
+            mouse-force="5"
+          />
+        </div>
         <p
-          class="mt-5 text-center text-2xl lowercase italic text-secondary md:text-3xl"
+          class="text-center text-2xl lowercase italic text-secondary md:text-3xl"
         >
           "big things often have small beginnings."
         </p>
