@@ -3,7 +3,7 @@
 
 <template>
   <section class="mx-auto flex h-screen max-w-7xl bg-background py-1">
-    <div class="mt-96 w-full">
+    <div class="mt-52 w-full md:mt-96">
       <div class="font-display font-black leading-loose">
         <div class="hidden flex-col items-center justify-center md:flex">
           <InspiraParticleImage
@@ -25,7 +25,7 @@
           software engineer
         </p>
       </div>
-      <div class="mx-auto mt-20 w-fit text-center text-sm md:w-2/5">
+      <div class="mx-auto mt-10 w-fit text-center text-sm md:mt-20 md:w-2/5">
         <Icon name="i-heroicons-chevron-down" class="icon size-6 text-zinc-500" />
       </div>
     </div>
