@@ -24,22 +24,10 @@
             My current dream, <span class="text-sm italic">as childish it may seem</span>, is to make the world a better place, as for devs or normal people in the <span class="italic">"real life"</span>.
             <br>
             Go visit the
-            <NuxtLink class="font-normal italic underline" to="/universe">
+            <NuxtLink class="font-semibold italic underline" to="/universe">
               universe
-          </NuxtLink> to learn more about my personality and stuff I like!
+            </NuxtLink> to learn more about my personality and stuff I like!
           </p>
-          <div class="mt-6">
-            <NuxtLink
-              class="inline-flex h-[48px] items-center justify-center rounded-lg bg-primary px-4 font-semibold text-primary-foreground"
-              to="/universe"
-            >
-              Into the verse
-              <Icon
-                name="i-heroicons-arrow-right"
-                class="text ml-2 align-baseline"
-              />
-            </NuxtLink>
-          </div>
         </div>
       </div>
     </div>
