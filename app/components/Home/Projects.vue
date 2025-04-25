@@ -65,7 +65,6 @@ const selectedProject = computed(() => {
         />
       </div>
     </div>
-    <HorizontalScroll class="block h-full lg:hidden" :projects />
   </div>
 </template>
 

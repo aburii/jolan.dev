@@ -1,4 +1,4 @@
-import type { HubItem } from '~/TMP/types/HubItem'
+import type { HubItem } from "~/types/HubItem"
 
 export const useHubStore = defineStore('hub', () => {
   const subItems = ref<HubItem[]>([])
