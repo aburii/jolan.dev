@@ -49,18 +49,18 @@ onMounted(() => {
         v-if="hubStore.nextItem || hubStore.items.length > 0"
         class="mx-auto box-border min-w-0 max-w-fit rounded-lg text-sm"
       >
-        <ul class="rounded-lg-lg flex gap-2 p-1.5">
+        <ul class="rounded-lg flex gap-2 p-1.5 bg-neutral-800">
           <li class="flex">
             <NuxtLink
               to="/"
-              class="inline-flex h-[48px] items-center justify-center rounded-lg px-5 text-lg font-bold lowercase leading-loose md:h-[60px] md:px-4"
+              class="bg-neutral-950 inline-flex h-[48px] items-center justify-center rounded-lg px-5 text-lg font-bold lowercase leading-loose md:h-[60px] md:px-4"
             >
               j<span class="hidden md:inline">olan</span>
             </NuxtLink>
           </li>
           <li
             v-if="hubStore.items.length > 0"
-            class="hidden rounded-lg px-1.5 lg:block"
+            class="hidden rounded-lg px-2 lg:block bg-neutral-900"
           >
             <ul class="flex h-full items-center space-x-2 rounded-lg">
               <li
@@ -70,16 +70,16 @@ onMounted(() => {
               >
                 <NuxtLink
                   :to="item.link"
-                  :class="['ease inline-flex h-[48px] cursor-pointer items-center justify-center rounded-lg border px-3 capitalize leading-[32px] decoration-0 transition-colors duration-300']"
+                  :class="[{ 'text-primary border-primary': currentVisibleAnchor == item.link }, 'ease inline-flex h-[48px] cursor-pointer items-center justify-center rounded-lg border px-3 capitalize leading-[32px] decoration-0 transition-colors duration-300 border-neutral-700 text-neutral-700 hover:text-primary hover:border-primary']"
                 >
-                  {{ item.label }}
+                  {{ item.label }} 
                 </NuxtLink>
               </li>
             </ul>
           </li>
           <li class="flex">
             <NuxtLink
-              class="inline-flex h-[48px] items-center justify-center rounded-lg px-4 font-semibold md:h-[60px]"
+              class="inline-flex h-[48px] items-center justify-center rounded-lg px-4 font-semibold md:h-[60px] bg-primary text-inverted"
               :to="hubStore.nextItem?.link"
             >
               {{ hubStore.nextItem?.label }}
