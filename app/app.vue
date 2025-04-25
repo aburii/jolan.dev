@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+import { Analytics } from '@vercel/analytics/nuxt';
 </script>
 <template>
   <UApp>
+    <Analytics />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
