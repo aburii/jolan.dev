@@ -83,7 +83,7 @@ onMounted(() => {
               :to="hubStore.nextItem?.link"
             >
               {{ hubStore.nextItem?.label }}
-              <Icon
+              <UIcon
                 name="i-heroicons-arrow-right"
                 class="text ml-2 align-baseline"
               />

@@ -5,19 +5,8 @@
   <section class="mx-auto flex h-screen max-w-7xl bg-background py-1">
     <div class="mt-52 w-full md:mt-96">
       <div class="font-display font-black leading-loose">
-        <div class="hidden flex-col items-center justify-center md:flex">
-          <InspiraParticleImage
-            image-src="/images/jolan.png"
-            :responsive-width="false"
-            mouse-force="5"
-          />
-        </div>
-        <div class="flex flex-col items-center justify-center md:hidden">
-          <InspiraParticleImage
-            image-src="/images/jolan-mobile.png"
-            :responsive-width="false"
-            mouse-force="5"
-          />
+        <div class="flex-col items-center justify-center flex">
+          JOLAN
         </div>
         <p
           class="text-center text-2xl italic text-secondary md:text-3xl"
@@ -26,7 +15,7 @@
         </p>
       </div>
       <div class="mx-auto mt-10 w-fit text-center text-sm md:mt-20 md:w-2/5">
-        <Icon name="i-heroicons-chevron-down" class="icon size-6 text-zinc-500" />
+        <UIcon name="i-heroicons-chevron-down" class="icon size-6 text-zinc-500" />
       </div>
     </div>
   </section>

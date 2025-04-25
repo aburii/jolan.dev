@@ -1,7 +1,11 @@
+<script lang="ts" setup>
+</script>
 <template>
-  <NuxtLayout>
+  <UApp>
+    <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  </UApp>
 </template>
 <style>
 .page-enter-active,

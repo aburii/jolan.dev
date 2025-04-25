@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IProject } from '~/types/Project'
+import type { IProject } from '~/TMP/types/Project'
 
 const projects = ref<IProject[]>([
   {
