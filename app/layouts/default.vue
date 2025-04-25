@@ -3,8 +3,8 @@ import { SpeedInsights } from '@vercel/speed-insights/vue';
 </script>
 
 <template>
+  <SpeedInsights />
   <section class="min-h-full w-full">
-    <SpeedInsights />
     <AppHub />
     <main>
       <slot />
