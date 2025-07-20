@@ -23,7 +23,7 @@ hubStore.setItemsWithDelay(
 <template>
   <div class="h-full">
     <HomeHero class="px-5" />
-    <HomeProjects />
+<!--    <HomeProjects />-->
     <HomeAbout class="px-5" />
   </div>
 </template>

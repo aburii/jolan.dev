@@ -4,12 +4,12 @@
 <template>
   <section class="mx-auto flex h-screen max-w-7xl py-1">
     <div class="mt-52 w-full md:mt-96">
-      <div class="font-display font-black leading-loose">
-        <div class="flex-col items-center justify-center flex font-display text-7xl font-bold tracking-wide">
-          JOLAN
+      <div class="leading-loose">
+        <div class="flex-col items-center justify-center flex font-display text-8xl font-bold tracking-wide uppercase">
+          jolan
         </div>
         <p
-          class="text-center text-2xl italic md:text-3xl"
+          class="text-center font-semibold text-lg uppercase"
         >
           software engineer
         </p>
