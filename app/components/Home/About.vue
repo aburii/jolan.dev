@@ -1,5 +1,8 @@
 <script setup lang="ts">
+const bDayYear = new Date(2001, 3, 12).getFullYear()
+const todayYear = new Date().getFullYear()
 
+const myAge = todayYear - bDayYear
 </script>
 
 <template>
@@ -12,7 +15,7 @@
         </h2>
         <div class="w-full flex-col items-center md:flex-row">
           <p class="self-start font-extralight">
-            I'm a 23 years old developer based in Paris, France 🇫🇷. <br>
+            I'm a {{ myAge }} years old developer based in Paris, France 🇫🇷. <br>
             Currently specializing in <span class="font-semibold">AI & Big data</span> engineering, I'm also a <span class="font-semibold">fullstack developer</span>.
           </p>
           <br>

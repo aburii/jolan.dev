@@ -4,7 +4,7 @@ const currentYear = new Date().getFullYear()
 
 <template>
   <div
-    class="flex h-[50px] items-center border-t px-10"
+    class="flex h-[50px] items-center px-10"
   >
     <span class="w-full text-end text-xs">
       © Jolan Brizard, {{ currentYear }} - All rights reserved

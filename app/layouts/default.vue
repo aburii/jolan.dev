@@ -14,5 +14,3 @@ import { SpeedInsights } from '@vercel/speed-insights/vue';
     </footer>
   </section>
 </template>
-<style scoped>
-</style>
