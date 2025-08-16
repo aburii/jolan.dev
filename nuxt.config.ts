@@ -28,5 +28,11 @@ export default defineNuxtConfig({
     viewTransition: true,
   },
 
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
+  },
+
   compatibilityDate: '2024-11-27'
 })
