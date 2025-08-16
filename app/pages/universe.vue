@@ -1,29 +1,27 @@
 <script setup lang="ts">
 import { useHubStore } from '~/stores/hub'
 
+
 const hubStore = useHubStore()
 
 hubStore.setItemsWithDelay(
-  [],
+  [
+    {
+      label: 'blog',
+      link: '#blog'
+    },
+  ],
   {
-    label: 'Universe',
-    link: '/universe',
+    label: 'Home',
+    link: '/',
   },
 )
 </script>
 
 <template>
-  <section class="flex h-full items-center justify-center">
-    <AppHub />
-
-    <span class="font-bold">
-      Work in progress
-      <UIcon
-        name="i-heroicons-wrench-screwdriver-solid"
-        class="align-sub"
-      />
-    </span>
-  </section>
+  <div class="h-screen py-5">
+    <UniverseBlog class="px-5" />
+  </div>
 </template>
 
 <style scoped></style>
