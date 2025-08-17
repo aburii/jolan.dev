@@ -37,7 +37,7 @@ hubStore.setItemsWithDelay(
 </script>
 
 <template>
-  <div class="px-20 py-10">
+  <div class="px-10 md:px-20 py-10">
     <template v-if="page">
       <ContentRenderer :value="page" />
     </template>
