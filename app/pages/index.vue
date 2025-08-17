@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { useHubStore } from '~/stores/hub'
+useSeoMeta({
+  title: 'jolan.de',
+  description: 'Software engineer',
+  ogTitle: 'jolan.dev',
+  ogDescription: 'Software engineer',
+  ogImage: '/images/jolan-dev.screen.png',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+})
 
 const hubStore = useHubStore()
 

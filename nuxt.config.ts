@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@pinia/nuxt',
     '@vueuse/nuxt',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/seo'
   ],
 
   css: ['~/assets/css/main.css'],
@@ -43,6 +44,23 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio'
     }
+  },
+
+  $development: {
+    site: {
+      url: 'http://localhost:3000',
+    }
+  },
+
+  $production: {
+    site: {
+      url: 'https://jolan.dev',
+    }
+  },
+
+  site: {
+    indexable: true,
+    defaultLocale: 'en',
   },
 
   compatibilityDate: '2024-11-27'

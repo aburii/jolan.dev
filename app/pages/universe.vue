@@ -1,4 +1,14 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Universe - jolan.dev',
+  description: 'Universe',
+  ogTitle: 'jolan.dev',
+  ogDescription: 'Software engineer',
+  ogImage: 'https://jolan.dev/images/jolan-dev.screen.png',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+})
+
 const hubStore = useHubStore()
 
 hubStore.setItemsWithDelay(

@@ -2,9 +2,18 @@
 const route = useRoute()
 const hubStore = useHubStore()
 
-
 const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection('blog').path(route.path).first()
+})
+
+useSeoMeta({
+  title: `${page.value?.title} - jolan.dev`,
+  description: page.value?.title,
+  ogTitle: `${page.value?.title} - jolan.dev`,
+  ogDescription: page.value?.description,
+  ogImage: 'https://jolan.dev/images/jolan-dev.screen.png',
+  ogType: 'article',
+  twitterCard: 'summary_large_image',
 })
 
 const tocLinks = computed(() => {
