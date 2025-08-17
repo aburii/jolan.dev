@@ -7,9 +7,9 @@ const { data: page } = await useAsyncData(route.path, () => {
 })
 
 useSeoMeta({
-  title: `${page.value?.title} - jolan.dev`,
+  title: page.value?.title,
   description: page.value?.title,
-  ogTitle: `${page.value?.title} - jolan.dev`,
+  ogTitle: page.value?.title,
   ogDescription: page.value?.description,
   ogImage: 'https://jolan.dev/images/jolan-dev.screen.png',
   ogType: 'article',

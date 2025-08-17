@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Universe - jolan.dev',
-  description: 'Universe',
-  ogTitle: 'jolan.dev',
-  ogDescription: 'Software engineer',
+  title: 'Universe',
+  description: 'Discover the world of jolan.dev',
+  ogTitle: 'Universe',
+  ogDescription: 'Discover the world of jolan.dev',
   ogImage: 'https://jolan.dev/images/jolan-dev.screen.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',

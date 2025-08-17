@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxt/content',
-    '@nuxtjs/seo'
+    '@nuxtjs/seo',
   ],
 
   css: ['~/assets/css/main.css'],
@@ -46,21 +46,23 @@ export default defineNuxtConfig({
     }
   },
 
-  $development: {
-    site: {
-      url: 'http://localhost:3000',
+  app: {
+    head: {
+      titleTemplate: '%s'
     }
   },
 
-  $production: {
-    site: {
-      url: 'https://jolan.dev',
-    }
+  fonts: {
+    families: [
+      { name: 'ClashGrotesk-Variable', provider: 'local' }
+    ]
   },
 
   site: {
+    name: 'jolan.dev',
     indexable: true,
     defaultLocale: 'en',
+    url: 'https://jolan.dev',
   },
 
   compatibilityDate: '2024-11-27'

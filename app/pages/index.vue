@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'jolan.de',
+  title: 'Home',
   description: 'Software engineer',
   ogTitle: 'jolan.dev',
   ogDescription: 'Software engineer',
