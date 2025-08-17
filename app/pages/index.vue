@@ -4,7 +4,7 @@ useSeoMeta({
   description: 'Software engineer',
   ogTitle: 'jolan.dev',
   ogDescription: 'Software engineer',
-  ogImage: '/images/jolan-dev.screen.png',
+  ogImage: 'https://jolan.dev/images/jolan-dev.screen.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',
 })
