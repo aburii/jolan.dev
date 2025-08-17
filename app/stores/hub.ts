@@ -3,16 +3,12 @@ import type { HubItem } from "~/types/HubItem"
 export const useHubStore = defineStore('hub', () => {
   const subItems = ref<HubItem[]>([])
   const nextItem = ref<HubItem | null>(null)
-  const router = useRouter()
 
-  router.beforeEach((a, b) => {
-    if (a.path === b.path) {
-      // anchors
-      return
-    }
+  function resetItems() {
     subItems.value = []
     nextItem.value = null
-  })
+
+  }
 
   function setItemsWithDelay(items: HubItem[], next: HubItem) {
     subItems.value = []
@@ -30,5 +26,6 @@ export const useHubStore = defineStore('hub', () => {
     items: subItems,
     nextItem,
     setItemsWithDelay,
+    resetItems,
   }
 })

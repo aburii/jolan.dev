@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { useHubStore } from '~/stores/hub'
-
-
 const hubStore = useHubStore()
 
 hubStore.setItemsWithDelay(

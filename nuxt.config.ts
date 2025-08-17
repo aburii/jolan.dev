@@ -29,6 +29,17 @@ export default defineNuxtConfig({
   },
 
   content: {
+    renderer: {
+      anchorLinks: { h1: true, h2: true, h3: true, h4: true, h5: true }
+    },
+    build: {
+      markdown: {
+        toc: {
+          depth: 5,
+          searchDepth: 3
+        }
+      },
+    },
     preview: {
       api: 'https://api.nuxt.studio'
     }

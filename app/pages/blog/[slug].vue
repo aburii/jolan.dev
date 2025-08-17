@@ -1,9 +1,30 @@
 <script setup lang="ts">
 const route = useRoute()
+const hubStore = useHubStore()
+
 
 const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection('blog').path(route.path).first()
 })
+
+const tocLinks = computed(() => {
+  const bodyTags = page.value?.body?.value
+
+
+  if (!bodyTags || bodyTags.length <= 0) {
+    return
+  }
+
+  return bodyTags.filter(node => ['h1', 'h2'].includes(node[0])).map(node => ({ tag: node[0], id: (node[1] as Record<string, string>).id!, text: node[2]! as string}))
+})
+
+hubStore.setItemsWithDelay(
+  tocLinks.value?.map(tocLink => ({ link: `#${tocLink.id}`, label: tocLink.text })) ?? [],
+  {
+    label: 'Universe',
+    link: '/universe',
+  },
+)
 </script>
 
 <template>

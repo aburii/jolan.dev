@@ -1,38 +1,38 @@
 <script setup lang="ts">
 import { useHubStore } from '~/stores/hub'
+import type { HubItem } from '~/types/HubItem'
 
-const route = useRoute()
 const hubStore = useHubStore()
 const currentVisibleAnchor = ref<string | null>(null)
 const windowScroll = useWindowScroll()
 
 onMounted(() => {
   const handleScroll = () => {
-    const currentScrollY = windowScroll.y.value
-    let foundVisibleAnchor = false
+    if (hubStore.items.length === 0) {
+      return
+    }
 
-    hubStore.items.forEach((item) => {
+    const TOP_OFFSET = 150
+    const currentScrollY = windowScroll.y.value
+
+    let visibleItem: HubItem | undefined
+
+    hubStore.items.forEach((item: HubItem) => {
       const elementId = item.link.replace('#', '')
       const htmlEl = document.getElementById(elementId)
 
       if (htmlEl) {
         const elementTop = htmlEl.offsetTop
-        const elementBottom = elementTop + htmlEl.offsetHeight
 
-        if (
-          currentScrollY >= elementTop - 100 &&
-          currentScrollY <= elementBottom - 100
-        ) {
-          currentVisibleAnchor.value = item.link
-          foundVisibleAnchor = true
+        if (elementTop <= currentScrollY + TOP_OFFSET) {
+          visibleItem = item
         }
       }
     })
 
-    if (!foundVisibleAnchor) {
-      currentVisibleAnchor.value = null
-    }
+    currentVisibleAnchor.value = visibleItem != null ? visibleItem.link : null
   }
+
 
   const optimizedHandleScroll = () => {
     requestAnimationFrame(handleScroll)
@@ -70,9 +70,9 @@ onMounted(() => {
               >
                 <NuxtLink
                   :to="item.link"
-                  :class="[{ 'text-primary border-primary': currentVisibleAnchor == item.link }, 'ease inline-flex h-[48px] cursor-pointer items-center justify-center rounded-lg border px-3 capitalize leading-[32px] decoration-0 transition-colors duration-300 border-neutral-700 text-neutral-700 hover:text-primary hover:border-primary']"
+                  :class="[{ 'text-primary border-primary': currentVisibleAnchor == item.link }, 'inline-flex max-w-[100px] ease justify-start h-[48px] cursor-pointer items-center rounded-lg border px-3 capitalize leading-[32px] decoration-0 transition-colors duration-300 border-neutral-700 text-neutral-700 hover:text-primary hover:border-primary']"
                 >
-                  {{ item.label }} 
+                  <span class="overflow-hidden whitespace-nowrap text-ellipsis min-w-0">{{ item.label }}</span>
                 </NuxtLink>
               </li>
             </ul>
